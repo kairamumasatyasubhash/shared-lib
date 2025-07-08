@@ -1,12 +1,12 @@
 import com.subhash.builds.calculator
 
-
 def call(Map pipelineParams) {
+//create instance
     Calculator calculator = new Calculator(this)
     pipeline {
-    agent any
-    environment {
-        APPLICATION_NAME = "${pipelineParams.appName}" 
+         agent any
+     environment {
+         APPLICATION_NAME = "${pipelineParams.appName}" 
     }
     stages {
         stage ('Build') {
@@ -15,7 +15,7 @@ def call(Map pipelineParams) {
                 echo "*********starting the building ${env.APPLICATION_NAME} application******"
             }
         }
-        satge ('calculator') {
+        stage ('calculator') {
             steps {
                 script {
                 echo "calling the calculator method"
