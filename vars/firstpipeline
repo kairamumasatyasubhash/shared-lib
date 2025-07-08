@@ -27,9 +27,6 @@ def call(Map pipelineParams) {
         stage ('Deploy') {
             steps {
                 echo 'Deploying...'
-                script {
-                    newcal.call(4,5)
-                   }
                }
            }
        }
