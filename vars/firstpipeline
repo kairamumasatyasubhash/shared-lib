@@ -4,40 +4,34 @@ import com.subhash.builds.calculator
 def call(Map pipelineParams) {
     Calculator calculator = new Calculator(this)
     pipeline {
-    agent slave {
-        label 'java-slave'
+    agent any
+    environment {
+        Application_Name = ${pipelineParams.appName}
     }
     stages {
         stage ('Build') {
             steps {
-                echo 'Building...'
-                sh 'mvn clean package'
+                echo "**********Building the application***********"
+                echo "*********starting the building the application******"
             }
         }
-        satge ('test') {
+        satge ('calculator') {
             steps {
                 script {
-                echo 'Testing...'
+                echo "calling the calculator method"
+                echo "********printing the values********"
+                calculator.add(2,3,)
                   }
             }
         }
         stage ('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh 'mvn deploy'
-            }
-        }
-        stage ('Cleanup') {
-            steps {
-                echo 'Cleaning up...'
-                sh 'mvn clean'
-            }
-        }
+                script {
+                    newcal.call(4,5)
+                   }
+               }
+           }
+       }
     }
-}
-}
-
-
-def newcal(thirdNumber, fourthNumber) {
-    return thirdNumber + fourthNumber
-}
+ }
