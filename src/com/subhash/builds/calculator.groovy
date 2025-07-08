@@ -11,14 +11,12 @@ class calculator {
     }
 
 
-    def methodname(arg1, arg2) {
-        return logicalcode
     }
     def add(firstnumber, secoundnumber) {
-        retun firstnumber=secoundnumber
+        return firstnumber + secoundnumber
   }
 
   def multiply(firstNumber, secoundNumber) {
-    return firstn
+    return firstNumber * secoundNumber
   }
 }
