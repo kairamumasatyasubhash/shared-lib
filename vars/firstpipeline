@@ -12,7 +12,7 @@ def call(Map pipelineParams) {
         stage ('Build') {
             steps {
                 echo "**********Building the application***********"
-                echo "*********starting the building the application******"
+                echo "*********starting the building ${env.APPLICATION_NAME} application******"
             }
         }
         satge ('calculator') {
